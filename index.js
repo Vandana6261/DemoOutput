@@ -5,7 +5,7 @@ let start = document.getElementById("start")
 let reset = document.getElementById("reset")
 
 let secValue = 0;
-let minValue = 50;
+let minValue = 0;
 let hourValue = 0;
 
 second.textContent = "00"
@@ -14,7 +14,7 @@ hour.textContent = "00"
 
 
 let intervalFun = function() {
-    secValue += 60;
+    secValue += 0;
     if(secValue)
     if(secValue < 10) {
         second.textContent = "0" + secValue 

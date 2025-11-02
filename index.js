@@ -11,6 +11,8 @@ let hourValue = 0;
 
 let intervalFun = function() {
     secValue += 1;
+    if(secValue == 60) secValue = 0;
+    if(minValue == 60) minValue = 0;
     if(secValue < 10) {
         second.textContent = "0" + secValue 
     } else {

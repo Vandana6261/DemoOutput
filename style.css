@@ -1,56 +1,38 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{
+margin : 0;
+padding : 0;
+box-sizing : border-box;
 }
 
 .container {
-  height: 100vh;
-  color: white;
-  background-image: url("https://png.pngtree.com/background/20250210/original/pngtree-detailed-look-at-a-professional-athletic-stopwatch-resting-picture-image_16257937.jpg");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-
-  .timer {
+    height: 100vh;
+    color: white;
+    background-image: url("https://img.freepik.com/free-vector/modern-abstract-dark-violate-pink-background_84443-2784.jpg?semt=ais_hybrid&w=740&q=80");
+    background-size: cover;
+    background-position: center;
     display: flex;
-    gap: 5px;
+    justify-content: center;
+    align-items: center;
 
-    .box {
-      height: 100px;
-      width: 100px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 60px;
-      border-radius: 10px;
-      background-color: rgba(71, 70, 70, 0.637);
-      position: relative;
-    }
-
-    .semicolon {
-        width: 50px;
+    .clock {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 60px;
-    }
-  }
+        gap: 20px;
 
-  .btn{
-    button {
-        border: none;
-        color: white;
-        padding: 10px 20px;
-        margin-right: 20px;
-        font-size: 20px;
-        border-radius: 40px;
-        background-color: rgba(128, 128, 128, 0.637);
+        .box {
+            height: 100px;
+            width: 100px;
+            border-radius: 10px;
+            background-color: rgba(128, 128, 128, 0.658);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+        }
+        .semicolon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 60px;
+        }
     }
-  }
-
 }

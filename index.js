@@ -1,97 +1,36 @@
-let hour = document.getElementById("hour")
-let minute = document.getElementById("minute")
-let second = document.getElementById("second")
-let start = document.getElementById("start")
-let reset = document.getElementById("reset")
+let hour = document.getElementById("hour");
+let minute = document.getElementById("minute");
+let second = document.getElementById("second");
+let period = document.getElementById("am-pm")
 
-let secValue = 0;
-let minValue = 0;
-let hourValue = 0;
+let date = new Date();
 
-second.textContent = "00"
-minute.textContent = "00"
-hour.textContent = "00"
+setInterval(function () {
+  date = new Date();
+  if (date.getSeconds() < 10) {
+    second.textContent = "0" + date.getSeconds();
+  } else {
+    second.textContent = date.getSeconds();
+  }
 
+  if (date.getMinutes() < 10) {
+    minute.textContent = "0" + date.getMinutes();
+  } else {
+    minute.textContent = date.getMinutes();
+  }
 
-let intervalFun = function() {
-    secValue += 1;
-    if(secValue < 10) {
-        second.textContent = "0" + secValue 
-    } else {
-        second.textContent = secValue
-    }
+  if (date.getHours() < 10) {
+    hour.textContent = "0" + date.getHours();
+  } else {
+    hour.textContent = date.getHours();
+  }
 
-    if(secValue === 60) {
-        minValue++;
-        if(minValue < 10) {
-            minute.textContent = "0" + minValue
-        } else {
-            minute.textContent = minValue
-        }
-        secValue = 0;
-        second.textContent = "0" + secValue
-    }
+  let hr = date.getHours();
 
-    if(minValue === 60) {
-        hourValue++;
-        if(hourValue < 10) {
-            hour.textContent = "0" + hourValue
-        } else {
-            hour.textContent = hourValue
-        }
-        minValue = 0;
-        minute.textContent = "0" + minValue
-    }
-}
-
-let id = 0
-
-start.addEventListener("click", (e) => {
-    // console.log(e.target.textContent)
-    if(e.target.textContent === "Start") {
-        e.target.textContent = "Pause"
-        id = setInterval(intervalFun, 1000)
-    } else if(e.target.textContent === "Pause") {
-        e.target.textContent = "Resume"
-        clearInterval(id)
-    } else if(e.target.textContent === "Resume") {
-        e.target.textContent = "Pause"
-        id = setInterval(intervalFun, 1000)
-    }
-})
-
-reset.addEventListener("click", (e) => {
-    clearInterval(id)
-    secValue =  0;
-    minValue = 0;
-    hourValue = 0;
-    second.textContent = "0" + secValue;
-    minute.textContent = "0" + minValue;
-    hour.textContent = "0" + hourValue;
-    start.textContent = "Start"
-})
-
-
-gsap.from("#hour", {
-    x: -100,
-    duration: 0.6,
-})
-gsap.from("#minute", {
-    y: -100,
-    duration: 0.6,
-})
-gsap.from("#second", {
-    x: 100,
-    duration: 0.6,
-})
-gsap.from("#start", {
-    x: 400,
-    duration: 0.8,
-})
-gsap.from("#reset", {
-    x: -400,
-    duration: 0.8,
-})
-
-
+  if(hr < 12){
+    period.textContent = "AM";
+  } else {
+    period.textContent = "PM";
+  }
+}, 1000);
 

@@ -1,38 +1,48 @@
-*{
-margin : 0;
-padding : 0;
-box-sizing : border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .container {
-    height: 100vh;
-    color: white;
-    background-image: url("https://img.freepik.com/free-vector/modern-abstract-dark-violate-pink-background_84443-2784.jpg?semt=ais_hybrid&w=740&q=80");
-    background-size: cover;
-    background-position: center;
+  height: 100vh;
+  color: white;
+  background-image: url("https://img.freepik.com/free-vector/modern-abstract-dark-violate-pink-background_84443-2784.jpg?semt=ais_hybrid&w=740&q=80");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .clock {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    gap: 20px;
 
-    .clock {
-        display: flex;
-        gap: 20px;
+    .box {
+      height: 100px;
+      width: 100px;
+      border-radius: 10px;
+      background-color: rgba(128, 128, 128, 0.658);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 50px;
 
-        .box {
-            height: 100px;
-            width: 100px;
-            border-radius: 10px;
-            background-color: rgba(128, 128, 128, 0.658);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 50px;
-        }
-        .semicolon {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 60px;
-        }
+      @media screen and (max-width: 520px) {
+        height: 15vw;
+        width: 15vw;
+        font-size: 2rem;
+      }
     }
+    .semicolon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 60px;
+
+      @media screen and (max-width: 520px) {
+        font-size: 2rem;
+      }
+    }
+  }
 }
